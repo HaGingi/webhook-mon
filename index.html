@@ -37,7 +37,8 @@
   </div>
 
   <script>
-    const socket = io.connect('http://localhost:3000');
+    // Updated Socket.io connection to use window.location.origin
+    const socket = io.connect(window.location.origin);
 
     socket.on('newWebhook', function(webhookData) {
       receiveWebhook(webhookData);

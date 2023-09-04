@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/HaGingi/webhook-mon/issues"
   },
-  "homepage": "https://github.com/HaGingi/webhook-mon#readme"
+  "homepage": "https://github.com/HaGingi/webhook-mon#readme",
+  "engines": {
+    "node": "14.x"
+  }
 }

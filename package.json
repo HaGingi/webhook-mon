@@ -1,7 +1,7 @@
 {
   "name": "webhook-mon",
   "version": "1.0.0",
-  "description": "",
+  "description": "A webhook monitoring service built with Node.js and Express",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/HaGingi/webhook-mon.git"
   },
-  "keywords": [],
+  "keywords": ["webhook", "monitoring", "node", "express"],
   "author": "",
   "license": "ISC",
   "bugs": {

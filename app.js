@@ -1,13 +1,17 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const http = require('http');
 const socketIO = require('socket.io');
+
+// Initialization
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
-const port = 3000;
 
-app.use(bodyParser.json());
+// Port setting
+const port = process.env.PORT || 3000;
+
+// Middleware
+app.use(express.json());
 
 app.use((req, res, next) => {
   if (req.path !== '/webhook' && req.method === 'POST') {
@@ -19,6 +23,7 @@ app.use((req, res, next) => {
 
 app.use(express.static('public'));
 
+// Webhook endpoint
 app.post('/webhook', (req, res) => {
   const webhookData = req.body;
   console.log('Webhook received:', webhookData);
@@ -26,6 +31,7 @@ app.post('/webhook', (req, res) => {
   res.sendStatus(200);
 });
 
+// Start server
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
